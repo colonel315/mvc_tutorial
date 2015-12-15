@@ -1,0 +1,10 @@
+Options -MultiViews
+RewriteEngine On
+
+ReWriteBase /MVC/public/
+
+ReWriteCond %{REQUEST_FILENAME} !-d
+ReWriteCond %{REQUEST_FILENAME} !-f
+
+#Takes the string (URL) and pass it through to parseUrl
+ReWriteRule ^(.+)$ index.php?url=$1 [QSA,L]
